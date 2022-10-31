@@ -1,0 +1,24 @@
+<div class="modal  modal-signin position-static d-block  py-5 bg-light"style="height: 600px; tabindex="-1" role="dialog" id="modalSignin">
+
+    <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+    <div class="modal-header p-5 pb-4 border-bottom-0">
+<form class="" action="/users/topic" method="get">
+    <button type="submit">Add New Topic</button>
+
+</form>
+</div>
+<div class="modal-body p-5 pt-0">
+    <h6>Recent Topics</h6>
+<% if(data.length!=0){%>
+    <%for(let i of data){%>
+   <a href="/users/topic/<%=i.topicName%>"><p><%=i.topicName%></p></a> 
+    <%}%>
+    <%}else{%>
+
+    <h3>No Topics</h3>
+    <%}%>
+</div>
+</div>
+</div>
+</div>
