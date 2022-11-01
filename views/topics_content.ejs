@@ -3,21 +3,21 @@
 <form class="" action="/users/create/topic" method="post">
     <h4>User Name:-<%=name%></h4>
 
-    <span>Topic Name</span>
+    <span><strong>Topic Name -> </strong></span>
     <input type="text"  placeholder="<%=topic%>" name="topicName" >
     <br>
     <textarea id="topiccontent" name="topiccontent" rows="10" cols="100"><%=content%></textarea>
   <br>
-  <input type="submit" value="Submit">
+  <input type="submit" class="btn btn-primary" value="Submit">
 </form>
 </div>
 <h5>ANY CALL ACTION:</h5>
 <div class="modal  position-static d-block bg-secondary d-flex justify-content-center">
  
-<div class="bg-success"><p>4-Totally Understood</p></div>
-<div class="bg-warning"><p>3- Somewhat Understood</p></div>
-<div class="bg-primary"><p>2- Not Clear</p></div>
-<div class="bg-danger"><p>1 – Totally rubbish</p></div>
+<div class="bg-success p-1 m-1"><p>4-Totally Understood</p></div>
+<div class="bg-warning p-1 m-1"><p>3- Somewhat Understood</p></div>
+<div class="bg-primary p-1 m-1"><p>2- Not Clear</p></div>
+<div class="bg-danger p-1 m-1"><p>1 – Totally rubbish</p></div>
 </div>
 
 <div>
@@ -29,7 +29,7 @@
             <!-- <span><%=split.indexOf(i)%></span> -->
             <span><%=i.sentence%></span>
             <input type="text"  placeholder="<%=i.value%>" name="value" style="width:36px">
-            <input type="submit" value="Submit">
+            <input type="submit" value="value">
           </li>
 
         </ul>

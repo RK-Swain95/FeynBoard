@@ -50,16 +50,43 @@ module.exports.dashboard = async function (req, res) {
            
     const verifyuser=jwt.verify(token,'radha');
     
-    console.log(verifyuser.userName);
+    //console.log(verifyuser.userName);
     let data=await Topics.find({userName:verifyuser.userName});
-console.log("data",data)
+    //console.log("data",data)
+    var total =0;
+    var show=[];
+    for(let j of data){
+      let olddata=await Content.findOne({topicName:j.topicName});
+      var array=olddata.contentsplit;
+      console.log(array.length);
+      for(let i of array){
+      total+=i.value;
+     }
+     console.log(total);
+     var percentage=(total/(array.length*4))*100;
+     show.push(percentage);
+
+     total=0;
+
+
+    }
+    
+    //console.log(olddata);
+    
+    
+
+
+
+
 
 
     return res.render("dashboard", {
       title: "dashboard",
-      data:data
+      data:data,
+      percentage:show
     })
   }catch(err){
+    console.log(err)
     return res.status(401).send('unauthorized');
   }
 };
@@ -80,6 +107,7 @@ module.exports.topicspage=async function(req,res){
 
 
   }catch(err){
+    console.log(err);
  return res.status(401).send('unauthorized');
   }
 }
