@@ -1,69 +1,74 @@
-
 <div class="text-center">
-<form class=""  method="post">
+  <form class="" method="post">
     <h4>User Name:-<%=name%></h4>
 
     <span><strong>Topic Name -> </strong></span>
-    <input type="text"  placeholder="<%=topic%>"  value="<%=topic%>" name="topicName" >
-    <br>
-    <textarea id="topiccontent" name="topiccontent" rows="10" cols="100"><%=content%></textarea>
-  <br>
-  <input type="submit" class="btn btn-primary" value="Submit" formaction="/users/create/topic">
-</form>
+    <input
+      type="text"
+      placeholder="<%=topic%>"
+      value="<%=topic%>"
+      name="topicName"
+    />
+    <br />
+    <textarea id="topiccontent" name="topiccontent" rows="10" cols="100">
+<%=content%></textarea
+    >
+    <br />
+    <input
+      type="submit"
+      class="btn btn-primary"
+      value="Submit"
+      formaction="/users/create/topic"
+    />
+  </form>
 </div>
 <h5>ANY CALL ACTION:</h5>
-<div class="modal  position-static d-block bg-secondary d-flex justify-content-center">
- 
-<div class="bg-success p-1 m-1 rounded-pill"><p>4-Totally Understood</p></div>
-<div class="bg-warning p-1 m-1 rounded-pill"><p>3- Somewhat Understood</p></div>
-<div class="bg-primary p-1 m-1 rounded-pill"><p>2- Not Clear</p></div>
-<div class="bg-danger p-1 m-1 rounded-pill"><p>1 – Totally rubbish</p></div>
+<div
+  class="modal position-static d-block bg-secondary d-flex justify-content-center"
+>
+  <div class="bg-success p-1 m-1 rounded-pill"><p>4-Totally Understood</p></div>
+  <div class="bg-warning p-1 m-1 rounded-pill">
+    <p>3- Somewhat Understood</p>
+  </div>
+  <div class="bg-primary p-1 m-1 rounded-pill"><p>2- Not Clear</p></div>
+  <div class="bg-danger p-1 m-1 rounded-pill"><p>1 – Totally rubbish</p></div>
 </div>
 
 <div>
-  <% if(split){%>
-    <% for(let i of split){%>
-      <form class="" action="/users/value?index=<%=split.indexOf(i)%>&topic=<%=topic%>" method="post" >
-        <ul>
-          <li>
-            <!-- <span><%=split.indexOf(i)%></span> -->
-            <span><%=i.sentence%></span>
-            <input type="text"  placeholder="<%=i.value%>" name="value" style="width:36px">
-            <input type="submit" value="value">
-          </li>
-
-        </ul>
-      </form>
-       <%}%>
-     <%}%>
-
+  <% if(split){%> <% for(let i of split){%>
+  <form
+    class=""
+    action="/users/value?index=<%=split.indexOf(i)%>&topic=<%=topic%>"
+    method="post"
+  >
+    <ul>
+      <li>
+        <!-- <span><%=split.indexOf(i)%></span> -->
+        <span><%=i.sentence%></span>
+        <input
+          type="text"
+          placeholder="<%=i.value%>"
+          name="value"
+          style="width: 36px"
+        />
+        <input type="submit" value="value" />
+      </li>
+    </ul>
+  </form>
+  <%}%> <%}%>
 </div>
-
-
-
 
 <h5>AFTER CALL ACTION:</h5>
 <div class="p-4 m-4 bg-dark text-white">
-  <% if(split){%>
-    <% for(let i of split){%>
-
-      
-      <% if(i.value==4){%>
-      <span style="color:green ;"><strong><%=i.sentence%>.</strong></span>
-      <%}else if(i.value==3){%>
-      <span style="color:yellow ;"><strong><%=i.sentence%>.</strong></span>
-      <%}else if(i.value==2){%>
-      <span style="color:blue ;"><strong><%=i.sentence%>.</strong></span>
-      <%}else if(i.value==1){%>
-        <span style="color:red ;"><strong><%=i.sentence%>.</strong></span>
-        <%}else{%>
-        <span ><strong><%=i.sentence%>.</strong></span>
-        <%}%>
-
-
-
-      <%}%>
-      <%}%>
-
+  <% if(split){%> <% for(let i of split){%> <% if(i.value==4){%>
+  <span style="color: green"><strong><%=i.sentence%>.</strong></span>
+  <%}else if(i.value==3){%>
+  <span style="color: yellow"><strong><%=i.sentence%>.</strong></span>
+  <%}else if(i.value==2){%>
+  <span style="color: blue"><strong><%=i.sentence%>.</strong></span>
+  <%}else if(i.value==1){%>
+  <span style="color: red"><strong><%=i.sentence%>.</strong></span>
+  <%}else{%>
+  <span><strong><%=i.sentence%>.</strong></span>
+  <%}%> <%}%> <%}%>
 </div>
-
