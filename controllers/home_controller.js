@@ -61,7 +61,7 @@ module.exports.dashboard = async function (req, res) {
         total += i.value;
       }
       console.log(total);
-      var percentage = (total / (array.length * 4)) * 100;
+      var percentage =parseInt( (total / (array.length * 4)) * 100);
       show.push(percentage);
       total = 0;
     }

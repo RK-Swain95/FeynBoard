@@ -26,12 +26,12 @@
 <div
   class="modal position-static d-block bg-secondary d-flex justify-content-center"
 >
-  <div class="bg-success p-1 m-1 rounded-pill"><p>4-Totally Understood</p></div>
-  <div class="bg-warning p-1 m-1 rounded-pill">
+  <div class="bg-success p-1 m-1 rounded-3 "><p class="align-text-bottom">4-Totally Understood</p></div>
+  <div class="bg-warning p-1 m-1 rounded-3 ">
     <p>3- Somewhat Understood</p>
   </div>
-  <div class="bg-primary p-1 m-1 rounded-pill"><p>2- Not Clear</p></div>
-  <div class="bg-danger p-1 m-1 rounded-pill"><p>1 – Totally rubbish</p></div>
+  <div class="bg-primary p-1 m-1 rounded-3 align-middle"><p>2- Not Clear</p></div>
+  <div class="bg-danger p-1 m-1 rounded-3 align-middle"><p>1 – Totally rubbish</p></div>
 </div>
 
 <div>
@@ -59,13 +59,13 @@
 </div>
 
 <h5>AFTER CALL ACTION:</h5>
-<div class="p-4 m-4 bg-dark text-white">
+<div class="p-4 m-4 bg-dark text-white rounded-3">
   <% if(split){%> <% for(let i of split){%> <% if(i.value==4){%>
   <span style="color: green"><strong><%=i.sentence%>.</strong></span>
   <%}else if(i.value==3){%>
-  <span style="color: yellow"><strong><%=i.sentence%>.</strong></span>
+  <span style="color: rgb(221, 221, 33)"><strong><%=i.sentence%>.</strong></span>
   <%}else if(i.value==2){%>
-  <span style="color: blue"><strong><%=i.sentence%>.</strong></span>
+  <span style="color: rgb(51, 91, 235)"><strong><%=i.sentence%>.</strong></span>
   <%}else if(i.value==1){%>
   <span style="color: red"><strong><%=i.sentence%>.</strong></span>
   <%}else{%>

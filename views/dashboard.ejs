@@ -9,12 +9,12 @@
 </form>
 </div>
 <div class="modal-body p-5 pt-0">
-    <h6>Recent Topics</h6>
+    <h5>Recent Topics</h5>
 <% if(data.length!=0){%>
     <%for(let i=0;i<data.length;i++){%>
-    <div>
+    <div class="modal position-static d-block bg-light ">
         <ul>
-   <li><a href="/users/topic/<%=data[i].topicName%>" style="text-decoration: none;"><span><%=data[i].topicName%></span></a><span> : <%=percentage[i]%>%</span> 
+   <li><a href="/users/topic/<%=data[i].topicName%>" style="text-decoration: none; font-size: 18px;"><span><%=data[i].topicName%></span></a><span style="text-decoration: none; font-size: 17px;"> : <%=percentage[i]%>% understood</span> 
    </li>
       </ul>
     <%}%>
