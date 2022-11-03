@@ -118,7 +118,34 @@ module.exports.createtopic = async function (req, res) {
           userName: verifyuser.userName,
         });
         const content = req.body.topiccontent;
-        splited = content.split(/[,-:_''"";?|.{}()]/);
+        //splited = content.split(/[,-:_''"";?|.{}()]/);
+        let splitedsymbols = [".", ",", ";", ":", "/", "-", "?", "|","@"];
+        let index;
+        let startingindex = 0;
+
+        for (index = 0; index < content.length; index++) {
+          for (let i = 0; i < splitedsymbols.length; i++) {
+            if (content.charAt(index) == splitedsymbols[i]) {
+              let splitedsentense = content.substring(startingindex, index+1);
+              splited.push(splitedsentense);
+              startingindex=index+1;
+
+            }
+          }
+        }
+        // if(startingindex<content.length){
+           let splitedsentense = content.substring(startingindex, index+1);
+               splited.push(splitedsentense);
+        // }
+    
+        //let splitedsentense = content.substring(startingindex, index);
+
+    
+
+
+
+
+        
           var contentobj = new Content({
           topicName: oldtopic.topicName,
         });
@@ -209,3 +236,14 @@ module.exports.topicpage = async function (req, res) {
     return res.status(401).send("unauthorized");
   }
 };
+
+
+//update
+module.exports.update=async function(req,res){
+  try{
+    
+
+  }catch(err){
+
+  }
+}
